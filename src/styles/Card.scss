@@ -1,0 +1,28 @@
+.portfolio {
+    
+    .portfolio__listeAppart {
+        flex: 1;
+	    display: grid;
+	    grid-template-columns: repeat(3, 1fr);
+	    grid-column-gap: 20px;
+	    grid-row-gap: 10px;
+        width: 100%;
+
+    .portfolio__listeAppart--appart{
+        width: 100%;
+        height: 260px;
+        
+    }
+    }
+}
+
+.image {
+    width: 100%;
+    height: 260px;
+    z-index: 0;
+    .image__title {
+        z-index: 100;
+        left: 0;
+        bottom: 20;
+    }
+}

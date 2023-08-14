@@ -1,6 +1,7 @@
 import appartements from '../datas/appartementList'
 //import React, { useState } from 'react';
 import React from 'react';
+import '../../styles/Card.scss'
 
 function Card() {
   //const [selectedImage, setSelectedImage] = useState(null);
@@ -10,17 +11,12 @@ function Card() {
   //};
 
   return (
-    <div className='appart'>
-      <ul className='listeAppart'>
+    <div className='portfolio'>
+      <ul className='portfolio__listeAppart'>
         {appartements.map(({ id, cover, title }) => (
-          <div key={id}>
-            <div
-              //className={`appart-card ${selectedImage === cover ? 'selected' : ''}`}
-              style={{ backgroundImage: `url(${cover})` }}
-              //onClick={() => imageClick(cover)}
-            >
-              <h3>{title}</h3>
-            </div>
+          <div className='portfolio__listeAppart--appart' key={id}>
+            <img className='image' src={cover} alt={title} />
+            <h3 className='image__title'>{title}</h3>
           </div>
         ))}
       </ul>

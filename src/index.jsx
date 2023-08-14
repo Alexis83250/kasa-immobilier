@@ -7,6 +7,7 @@ import Logement from './pages/Logement'
 import Error from './components/Error'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import '../src/styles/Body.scss'
 
 //import Banner from '../../components/Banner'
 

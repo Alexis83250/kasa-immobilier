@@ -1,0 +1,25 @@
+$color-accueil : #FF6060;
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    //width: 1240px;
+    //max-width: 1240px;
+    padding: 30px 30px;
+
+    .nav__div {
+        gap : 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__lien{
+        text-decoration: none;
+        color: $color-accueil ;
+    }
+    .nav__lien:hover{
+        border-bottom: 1px solid $color-accueil;
+    }
+}
