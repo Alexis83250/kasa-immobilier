@@ -11,6 +11,9 @@
     .portfolio__listeAppart--appart{
         width: 100%;
         height: 260px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
         
     }
     }
@@ -18,11 +21,14 @@
 
 .image {
     width: 100%;
-    height: 260px;
+    height: 100%;
+    position: relative;
     z-index: 0;
-    .image__title {
-        z-index: 100;
-        left: 0;
-        bottom: 20;
-    }
+    object-fit: cover;
+}
+
+.image__title {
+    z-index: 100;
+    position: absolute;
+    
 }

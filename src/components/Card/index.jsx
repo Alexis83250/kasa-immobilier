@@ -16,7 +16,7 @@ function Card() {
         {appartements.map(({ id, cover, title }) => (
           <div className='portfolio__listeAppart--appart' key={id}>
             <img className='image' src={cover} alt={title} />
-            <h3 className='image__title'>{title}</h3>
+            <p className='image__title'>{title}</p>
           </div>
         ))}
       </ul>
