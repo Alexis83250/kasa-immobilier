@@ -1,0 +1,32 @@
+$colorClosed :#FF6060;
+
+
+.propos{
+    align-items: center; 
+    flex-direction: column;
+    .propos__closed{
+        justify-content: space-between;
+        align-items: center;
+        background-color: $colorClosed;
+        width: 1023px;
+        height: 52px;
+        margin-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    .propos__closed--logo{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+.ajustement{
+    display: flex;
+        
+       
+}

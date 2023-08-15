@@ -1,3 +1,6 @@
+$errorColor : #FF6060;
+
+
 .error {
     display: flex;
     justify-content: center;
@@ -5,4 +8,10 @@
     flex-direction: column;
     width: 1240px;
     height: 650px;
+    .error__color{
+       color : $errorColor;
+    }
+    .padding{
+        padding-top: 80px;
+    }
 }
