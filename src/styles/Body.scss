@@ -2,12 +2,12 @@ html {
     min-height: 100%;
     body {
     width: 100%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
 
     main {
         width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 

@@ -7,15 +7,15 @@ import '../../styles/Header.scss'
 
 function Header() {
   return (
-    <nav className='nav'>
+    <header className='nav'>
       <Link to="/">
         <img className='nav__logo' src={LogoHeader} alt='Logo Kasa'/>
       </Link>
-      <div className='nav__div'>
+      <nav className='nav__div'>
         <Link className='nav__lien' to="/">Accueil</Link>
         <Link className='nav__lien' to="/A-Propos">A Propos</Link>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
 export default Header
