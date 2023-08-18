@@ -1,4 +1,4 @@
-import ImageFond2 from '../../assets/ImageFond2.png'
+/*import ImageFond2 from '../../assets/ImageFond2.png'
 import Fleche from '../../assets/fleche-haute.png'
 import { useState, useEffect } from "react";
 import '../../styles/Banner.scss'
@@ -9,12 +9,16 @@ function Propos() {
   const [isClosed, setIsClosed] = useState(true);
   return (<div className='propos ajustement'>
 
-    isClosed ? (
+    
     <div className='Banniere'>
       <img className="Banniere__ImageFond" src={ImageFond2} alt='Paysage en fond'/>
-    </div>)
+    </div>
+
+
+
+
     <div className='propos__fenetre propos'> 
-      <div className='ajustement propos__closed'><p>Fiabilité</p><img className='propos__closed--logo cursor' onClick={() => setIsClosed(false)} src={Fleche} alt='Fleche pour dérouler'/></div>
+      <div className='ajustement propos__closed'><p>Fiabilité</p><img className='propos__closed--logo cursor' src={Fleche} alt='Fleche pour dérouler'/></div>
       <p className='closed__fenetre'>Les annonces postées sur Kasa garantissent une fiabilité totale. 
       Les phtos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p>
       </div>
@@ -41,4 +45,24 @@ function Propos() {
   )
 }
 
-export default Propos
+export default Propos*/
+
+import React, { useState } from 'react';
+import Collapse from '../../components/Collapse'
+import Banner from '../../components/Banner'
+import '../../styles/Propos.scss'
+
+function Propos() {
+ 
+
+  return (
+    <div className='ajustement'>
+
+      <Banner />
+      <Collapse />
+
+    </div>
+  );
+}
+
+export default Propos;

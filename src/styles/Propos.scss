@@ -1,14 +1,20 @@
-$colorClosed :#FF6060;
+/*$colorClosed :#FF6060;
+
 
 
 .propos{
     align-items: center; 
     flex-direction: column;
-    .propos__closed{
+    .propos__fenetre{
+        
+        width: 1023px;
+        display: flex;
+        margin: 0;
+         .propos__closed{
         justify-content: space-between;
         align-items: center;
         background-color: $colorClosed;
-        width: 1023px;
+        width: 100%;
         height: 52px;
         margin-top: 30px;
         padding-left: 15px;
@@ -22,11 +28,120 @@ $colorClosed :#FF6060;
         width: 40px;
         height: 40px;
     }
+    
+    }
+   
+    
 }
 
 
 .ajustement{
+    width: 100%;
     display: flex;
-        
-       
+    justify-content: center;
+    align-items: center;     
 }
+
+.closed__fenetre {
+    background-color: #F6F6F6;
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 15px 15px;
+    color: $colorClosed;
+}
+
+#Marge{
+    margin-bottom: 190px;
+}
+
+.cursor:hover{
+    cursor: pointer;
+}
+
+
+.bouton{
+   border-style: none;
+   background-color: $colorClosed;
+}
+*/
+
+$colorClosed :#FF6060;
+
+.ajustement{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;     
+}
+
+.propos {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    margin-bottom: 140px;
+    
+    .propos__fenetre {
+      margin: 10px 0;
+      border: none;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+     
+      
+      .propos__closed {
+        flex: 1;
+        display: flex;
+        width: 100%;
+        align-items: center;  
+        justify-content: space-between;
+        background-color: $colorClosed;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        
+        .bouton {
+          background: none;
+          border: none;
+          cursor: pointer;
+          outline: none;
+        }
+        .propos__closed--para{
+            color: white;
+            padding-left: 15px;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-size: 24px;
+        }
+        
+        .propos__closed--logo {
+          max-width: 30px;
+        }
+      }
+      
+      .closed__fenetre { // Caché par défaut
+        text-align: center;
+        background-color: #F6F6F6; 
+        width: 100%;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        .closed__fenetre--para{
+            color: $colorClosed;
+        }
+      }
+      
+      &.open {
+        .closed__fenetre {
+          display: block; 
+        }
+      }
+    }
+  }
+

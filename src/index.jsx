@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Propos from './pages/Propos'
+import Collapse from './pages/Propos'
 import Logement from './pages/Logement'
 import Error from './components/Error'
 import Header from './components/Header'
@@ -19,7 +19,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/"  exact element={<Home />} />
-        <Route path="/A-Propos" element={<Propos />} />
+        <Route path="/A-Propos" element={<Collapse />} />
         <Route path="/Fiche-Logement/:id" element={<Logement />} />
         <Route path="*" element={<Error />} />
       </Routes>
