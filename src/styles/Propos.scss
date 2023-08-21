@@ -1,74 +1,3 @@
-/*$colorClosed :#FF6060;
-
-
-
-.propos{
-    align-items: center; 
-    flex-direction: column;
-    .propos__fenetre{
-        
-        width: 1023px;
-        display: flex;
-        margin: 0;
-         .propos__closed{
-        justify-content: space-between;
-        align-items: center;
-        background-color: $colorClosed;
-        width: 100%;
-        height: 52px;
-        margin-top: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        color: white;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-    }
-    .propos__closed--logo{
-        width: 40px;
-        height: 40px;
-    }
-    
-    }
-   
-    
-}
-
-
-.ajustement{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-}
-
-.closed__fenetre {
-    background-color: #F6F6F6;
-    width: 100%;
-    margin: 0;
-    padding: 15px 0;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    padding: 15px 15px;
-    color: $colorClosed;
-}
-
-#Marge{
-    margin-bottom: 190px;
-}
-
-.cursor:hover{
-    cursor: pointer;
-}
-
-
-.bouton{
-   border-style: none;
-   background-color: $colorClosed;
-}
-*/
-
 $colorClosed :#FF6060;
 
 .ajustement{
@@ -85,6 +14,7 @@ $colorClosed :#FF6060;
     align-items: center;
     justify-content: center;
     width: 85%;
+    max-width: 85%;
     margin-bottom: 140px;
     
     .propos__fenetre {
@@ -99,6 +29,7 @@ $colorClosed :#FF6060;
         flex: 1;
         display: flex;
         width: 100%;
+        max-width: 100%;
         align-items: center;  
         justify-content: space-between;
         background-color: $colorClosed;
@@ -137,11 +68,7 @@ $colorClosed :#FF6060;
         }
       }
       
-      &.open {
-        .closed__fenetre {
-          display: block; 
-        }
-      }
+      
     }
   }
 

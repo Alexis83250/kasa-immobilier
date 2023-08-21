@@ -1,5 +1,5 @@
-/*import ImageFond2 from '../../assets/ImageFond2.png'
-import Fleche from '../../assets/fleche-haute.png'
+import ImageFond2 from '../../assets/ImageFond2.png'
+/*import Fleche from '../../assets/fleche-haute.png'
 import { useState, useEffect } from "react";
 import '../../styles/Banner.scss'
 import '../../styles/Propos.scss'
@@ -47,9 +47,9 @@ function Propos() {
 
 export default Propos*/
 
-import React, { useState } from 'react';
+import React from 'react';
 import Collapse from '../../components/Collapse'
-import Banner from '../../components/Banner'
+//import Banner from '../../components/Banner'
 import '../../styles/Propos.scss'
 
 function Propos() {
@@ -57,8 +57,11 @@ function Propos() {
 
   return (
     <div className='ajustement'>
+      <div className='Banniere'>
+      <img className="Banniere__ImageFond" src={ImageFond2} alt='Paysage en fond'/>
+    </div>
 
-      <Banner />
+      
       <Collapse />
 
     </div>

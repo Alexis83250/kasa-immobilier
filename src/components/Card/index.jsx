@@ -1,5 +1,6 @@
 import appartements from '../datas/appartementList'
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/Card.scss'
 
 function Card() {
@@ -13,11 +14,11 @@ function Card() {
     <div className='portfolio'>
       <ul className='portfolio__listeAppart borderCard'>
         {appartements.map(({ id, cover, title }) => (
-          <div  className={`portfolio__listeAppart--appart ${selectedImage === cover ? 'selected' : ''}`} key={id} id={id} onClick={() => imageClick(cover)}>
+          <Link to={`/Fiche-Logement/${id}`}  className={`portfolio__listeAppart--appart ${selectedImage === cover ? 'selected' : ''}`} key={id} id={id} onClick={() => imageClick(cover)}>
             <img className='image borderCard' src={cover} alt={title} />
             <div className='image__ombre borderCard'></div>
             <p className='image__title'>{title}</p>
-          </div>
+          </Link>
         ))}
       </ul>
     </div>
