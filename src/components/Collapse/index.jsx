@@ -1,33 +1,3 @@
-/*import React, { useState } from 'react';
-
-function Collapse() {
-  const [open, setOpen] = useState(false);
-
-  const toggleCollapse = () => {
-    setOpen(prevOpen => !prevOpen);
-  }
-
-  return (
-    <div>
-      <button onClick={toggleCollapse}>
-        {open ? 'Fermer' : 'Ouvrir'}
-      </button>
-      {open && (
-        <div>
-          {/* Contenu du collapse *//*}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default Collapse;*/
-
-
-
-
-
 import collapseList from '../datas/CollapseList'
 import React, { useState } from 'react';
 import '../../styles/Card.scss'
@@ -51,9 +21,9 @@ function Collapse() {
         >
           <div className=' propos__closed'>
             <p className='propos__closed--para'>{title}</p>
-            <button className="bouton" onClick={() => toggleCollapse(id)}>
+            <button className={`bouton ${openId ? 'open' : ''}`} onClick={() => toggleCollapse(id)}>
               <img
-                className='propos__closed--logo cursor'
+                className={`propos__closed--logo cursor ${openId ? 'rotate' : ''}`}
                 src={cover}
                 alt="Flèche déroulante"
               />
