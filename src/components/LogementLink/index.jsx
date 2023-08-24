@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
-import React, { useState } from 'react';
+import React from 'react';
 import appartements from '../datas/appartementList';
-import flecheHaute from '../../assets/flecheHaute.png'
+import "../../styles/Logement.scss"
+import AppartCollapse from '../DescriptionCollapse'
+import EquipmentsCollapse from '../EquipmentCollapse'
 
 function AppartementDetailPage() {
   const { id } = useParams();
@@ -11,48 +13,35 @@ function AppartementDetailPage() {
     return <p>L'appartement correspondant n'a pas été trouvé.</p>;
   }
 
-  const { title, location, description, pictures, host, rating, equipments, tags  } = selectedAppartement;
+  const { title, location, description, pictures, host, rating, equipments } = selectedAppartement;
 
 
   return (
   <div key={id} className='logement'>
     <div className='logement__carroussel'><img src={pictures} alt={title}/></div>
+    <div className='logement__div'>
     <div className='logement__title'><h1>{title}</h1><p>{location}</p></div>
-    <div className='host'>
-    <p>{host.name}</p>
-    <img src={host.picture} alt={host.name}/>
+    <div className='logement__host'>
+    <p className='logement__host--p'>{host.name}</p>
+    <img className='logement__host--img' src={host.picture} alt={host.name}/>
     </div>
+    </div>
+    <div className='logement__div--2'>
     <div className='logement__tags'>
-        {selectedAppartement.tags.map((tag) => (
-          <p>{tag}</p>
+        {selectedAppartement.tags.map((tag, index) => (
+          <p className='logement__tags--p' key={index}>{tag}</p>
         ))}
     </div>
     <div className='logement__ratings'>{rating}</div>
+    </div>
+    <div className='logement__div--3'>
     <div className='logement__description'>
-            <p className='propos__closed--para'>Description</p>
-            <button className="bouton">
-              <img
-                className='propos__closed--logo cursor'
-                src={flecheHaute}
-                alt="Flèche déroulante"
-              />
-            </button>
-            <p>{description}</p>
+          <AppartCollapse />
           </div>
-    <div className='logement__equipement'></div>
     <div className='logement__equipement'>
-            <p>Description</p>
-            <button className="bouton">
-              <img
-                src={flecheHaute}
-                alt="Flèche déroulante"
-              />
-            </button>
-            <p>{selectedAppartement.equipments.map((equipment) => (
-          <p>{equipment}</p>
-        ))}</p>
-          </div>
-      
+        <EquipmentsCollapse data={equipments} id={id} key={id}/>
+    </div>
+      </div>
       
       <div>
        
