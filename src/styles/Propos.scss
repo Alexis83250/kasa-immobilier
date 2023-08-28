@@ -44,7 +44,6 @@ $colorClosed :#FF6060;
           overflow: hidden;
           background: none;
           border: none;
-          cursor: pointer;
           outline: none;
           transition: height 0.3s ease; // Transition de l'animation
           cursor: pointer;
@@ -98,6 +97,7 @@ $colorClosed :#FF6060;
             color: $colorClosed;
             display: flex;
             flex-direction: column;
+            margin: 5px;
         }
       }
       
@@ -106,11 +106,4 @@ $colorClosed :#FF6060;
   }
 
 
-  #descCollapse{
-    width: 100%;
-}
-
-#equipCollapse{
-    width: 100%;
-}
 

@@ -1,33 +1,63 @@
-import appartements from '../datas/appartementList'
+//import appartements from '../datas/appartementList'
 import React from 'react';
 import '../../styles/Card.scss'
 import '../../styles/Propos.scss'
 import etoilePleine from "../../assets/etoilePleine.png"
 import etoileVide from "../../assets/etoileVide.png"
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 
 
+/*
+function RatingStar(data, index) {
+    const note = data;
+    console.log(note);
+    const ratingStart = [];
+    const ratingEnd = 5;
+    
+    
 
-function ratingStar() {
-    const { rating } = useParams();
+  for (let i = 0; i < ratingEnd; i++) {
+    ratingStart.push(i.index < note - 1 ? <img 
+      key={index} 
+      className={"ratingStar pleine"}src={etoilePleine}
+      alt="étoile pleine"/> : 
 
-    const selectedrating = appartements.find(rating);
-  const range = [1, 2, 3, 4, 5] 
-
-  const ratingAppart = appartements.rating
-
-  const ratingFinale = rate === 'rating' ? etoilePleine : etoileVide
-
+      <img 
+      key={index} 
+      className={"ratingStar vide"}
+      src={etoileVide}
+      alt="étoile vide"/>)
+    
+  }
+  console.log(ratingStart);
 
   return (
-    <div className='rating'>
-       {appartements.map((rating) => scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
-            )}
-    </div>
+  
+    <div>{ratingStart}</div>
+    
   );
 }
 
-export default ratingStar;
+export default RatingStar;*/
+function RatingStar({ data, index }) {
+  const note = data;
+  const ratingStars = [];
+  const ratingEnd = 5;
+  const pleineEtoile = <img className={"ratingStar pleine"} src={etoilePleine} alt="étoile pleine" />;
+  const videEtoile = <img className={"ratingStar vide"} src={etoileVide} alt="étoile vide" />;
+
+  for (let i = 0; i < ratingEnd; i++) {
+    ratingStars.push(
+      <span key={i}>
+        {i < note ? pleineEtoile : videEtoile}
+      </span>
+    );
+  }
+
+  return <div>{ratingStars}</div>;
+}
+
+export default RatingStar;
 
 
 

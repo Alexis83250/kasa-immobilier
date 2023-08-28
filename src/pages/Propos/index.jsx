@@ -49,21 +49,28 @@ export default Propos*/
 
 import React from 'react';
 import Collapse from '../../components/Collapse'
+import collapseList from '../../components/datas/CollapseList'
 //import Banner from '../../components/Banner'
 import '../../styles/Propos.scss'
 
-function Propos() {
- 
 
+
+function Propos() {
   return (
     <div className='ajustement'>
       <div className='Banniere'>
-      <img className="Banniere__ImageFond" src={ImageFond2} alt='Paysage en fond'/>
-    </div>
+        <img className="Banniere__ImageFond" src={ImageFond2} alt='Paysage en fond' />
+      </div>
 
-      
-      <Collapse />
-
+      {collapseList.map(item => (
+        <Collapse
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          description={item.description}
+          cover={item.cover}
+        />
+      ))}
     </div>
   );
 }

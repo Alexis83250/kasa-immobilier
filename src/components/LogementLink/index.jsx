@@ -4,6 +4,8 @@ import appartements from '../datas/appartementList';
 import "../../styles/Logement.scss"
 import AppartCollapse from '../DescriptionCollapse'
 import EquipmentsCollapse from '../EquipmentCollapse'
+import Carousel from '../Carousel/index'
+import RatingStar from '../Rating/index'
 
 function AppartementDetailPage() {
   const { id } = useParams();
@@ -18,7 +20,7 @@ function AppartementDetailPage() {
 
   return (
   <div key={id} className='logement'>
-    <div className='logement__carroussel'><img src={pictures} alt={title}/></div>
+    <div className='logement__carroussel'><Carousel data={pictures} id={id} key={id}/></div>
     <div className='logement__div'>
     <div className='logement__title'><h1>{title}</h1><p>{location}</p></div>
     <div className='logement__host'>
@@ -32,7 +34,7 @@ function AppartementDetailPage() {
           <p className='logement__tags--p' key={index}>{tag}</p>
         ))}
     </div>
-    <div className='logement__ratings'>{rating}</div>
+    <div className='logement__ratings'><RatingStar data={rating}/></div>
     </div>
     <div className='logement__div--3'>
     <div className='logement__description'>

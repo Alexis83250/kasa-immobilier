@@ -1,19 +1,11 @@
-//carousel a venir
-
 import React, { useState } from 'react';
+import left from '../../assets/left.png'
+import right from '../../assets/right.png'
 
-const images = [
-  'image1.jpg',
-  'image2.jpg',
-  'image3.jpg',
-  // ... Ajoutez d'autres noms d'images ici ...
-];
-
-function Carousel() {
+function Carousel({ data }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const handleNext = () => {
-    if (currentImageIndex < images.length - 1) {
+    if (currentImageIndex < data.length - 1) {
       setCurrentImageIndex(currentImageIndex + 1);
     }
   };
@@ -23,16 +15,16 @@ function Carousel() {
       setCurrentImageIndex(currentImageIndex - 1);
     }
   };
-
   return (
-    <div className='carousel'>
-      <button onClick={handlePrevious} disabled={currentImageIndex === 0}>
-        Previous
+    <div className='logement__carroussel--carou'>
+      <button className='left myBtn' onClick={handlePrevious} disabled={currentImageIndex === 0}>
+      <img src={left} alt='vue suivante'/>
       </button>
-      <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex}`} />
-      <button onClick={handleNext} disabled={currentImageIndex === images.length - 1}>
-        Next
+      <img className='myImage' src={data[currentImageIndex]} alt={`Vue du logement ${currentImageIndex}`} />
+      <button className='right myBtn' onClick={handleNext} disabled={currentImageIndex === data.length - 1}>
+      <img src={right} alt='vue précédente'/>
       </button>
+      <p className='middle' >{currentImageIndex + 1}/{data.length}</p>
     </div>
   );
 }

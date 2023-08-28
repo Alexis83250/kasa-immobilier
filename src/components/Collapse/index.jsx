@@ -5,7 +5,7 @@ import '../../styles/Propos.scss'
 
 
 
-function Collapse() {
+function Collapse(col) {
   const [openId, setOpenId] = useState(null);
 
   const toggleCollapse = (itemId) => {
@@ -13,29 +13,28 @@ function Collapse() {
   }
 
   return (
-    <div className='propos ajustement'>
-      {collapseList.map(({ id, title, cover, description }) => (
+    <div className='propos ajustement' key={col.id}>
         <div
           className={`propos__fenetre propos`}
-          key={id}
+          
         >
           <div className=' propos__closed'>
-            <p className='propos__closed--para'>{title}</p>
-            <button className={`bouton ${openId ? 'open' : ''}`} onClick={() => toggleCollapse(id)}>
+            <p className='propos__closed--para'>{col.title}</p>
+            <button className={`bouton ${openId ? 'open' : ''}`} onClick={() => toggleCollapse(col.id)}>
               <img
                 className={`propos__closed--logo cursor ${openId ? 'rotate' : ''}`}
-                src={cover}
+                src={col.cover}
                 alt="Flèche déroulante"
               />
             </button>
           </div>
-          {openId === id && (
+          {openId === col.id && (
             <div className='closed__fenetre'>
-              <p className='closed__fenetre--para'>{description}</p>
+              <p className='closed__fenetre--para'>{col.description}</p>
             </div>
           )}
         </div>
-      ))}
+      
     </div>
   );
 }
