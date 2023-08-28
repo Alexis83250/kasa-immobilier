@@ -1,44 +1,51 @@
-import appartements from '../datas/appartementList'
 import React, { useState } from 'react';
 //import '../../styles/Card.scss'
-import '../../styles/Propos.scss'
+import '../../styles/FicheLogement.scss'
 import flecheHaute from '../../assets/flecheHaute.png'
 
 
 
-function AppartCollapse() {
-  const [openId, setOpenId] = useState(null);
+function AppartCollapse(descript) {
+  //const [openId, setOpenId] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  //console.log(equipement.data);
+  //console.log(equipement.id);
 
-  const toggleCollapse = (itemId) => {
-    setOpenId(prevOpenId => (prevOpenId === itemId ? null : itemId));
+  const toggleCollapse = () => {
+    //setOpenId(prevOpenId => (prevOpenId === itemId ? null : itemId));
+    setIsOpen(!isOpen);
   }
-
+ //const equipment = appartements.equipements
   return (
-    <div className='propos ajustement'>
-      {appartements.map(({ id, description }) => (
+    <div  className='propos  equipCollapse ajustement'>
         <div 
           className={`propos__fenetre propos`}
-          key={id}
+          key={descript.id}
         >
-          <div  id='descCollapse' className=' propos__closed'>
-            <p  className='propos__closed--para'>Description</p>
-            <button className={`bouton ${openId ? 'open' : ''}`} onClick={() => toggleCollapse(id)}>
+          <div id='equipCollapse' className=' propos__closed'>
+            <p className='propos__closed--para'>Equipements</p>
+            <button className={`bouton ${isOpen ? 'open' : ''}`} onClick={toggleCollapse}>
+                
               <img
-                className='propos__closed--logo cursor'
+                className={`propos__closed--logo cursor ${isOpen ? 'rotate' : ''}`}
                 src={flecheHaute}
                 alt="Flèche déroulante"
               />
             </button>
           </div>
-          {openId === id && (
+          
+          {isOpen && (
             <div className='closed__fenetre'>
-              <p className='closed__fenetre--para'>{description}</p>
+              <p className='closed__fenetre--para'>{descript.data}</p>
             </div>
+            
           )}
         </div>
-      ))}
     </div>
   );
 }
 
 export default AppartCollapse;
+
+/* l36{openId === equipement.id && (*/
+/* l28onClick={() => toggleCollapse(equipement.id)}*/

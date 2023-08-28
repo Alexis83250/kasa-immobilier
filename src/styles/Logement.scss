@@ -76,17 +76,19 @@ border-radius: 20px;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    height: auto;
+    position: relative;
     .logement__description{
-        width: 49%;
+        width: 47%;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items:flex-start;
+        justify-content:flex-start;
     }
 
     .logement__equipement{
-        width: 49%;
+        width: 47%;
         display: flex;
-        align-items: center;
+        align-items:flex-start;
         justify-content:flex-end;
     }
 }

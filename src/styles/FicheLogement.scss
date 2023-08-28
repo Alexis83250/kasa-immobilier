@@ -1,0 +1,114 @@
+$colorClosed :#FF6060;
+
+.ajustement{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.propos {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    max-width: 98%;
+    margin-bottom: 140px;
+    
+    .propos__fenetre {
+      margin: 10px 0;
+      border: none;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+     
+      
+      .propos__closed {
+        flex: 1;
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;  
+        justify-content: space-between;
+        background-color: $colorClosed;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        z-index: 10;
+        
+        .bouton  {
+          position: relative;
+          
+          overflow: hidden;
+          background: none;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          transition: height 0.3s ease; // Transition de l'animation
+          cursor: pointer;
+
+        }
+        
+          
+
+
+        .propos__closed--para{
+            color: white;
+            padding-left: 15px;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-size: 24px;
+        }
+        
+        .propos__closed--logo {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease; // Transition de la rotation
+        
+          &.rotate {
+            transform: rotate(-180deg); // Rotation de l'image
+          }
+        
+        }
+      }
+      
+      .closed__fenetre { // Caché par défaut
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        background-color: #F6F6F6; 
+        width: 98%;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        animation: move 20s ;
+    -webkit-animation: move 0.7s ;
+    -moz-animation: move 0.7s ;
+    -o-animation: move 0.7s ;
+    z-index: 0;
+
+
+    @keyframes move{
+      from {margin-top:-50px;}
+      to {margin-top:0px;}
+  }
+        
+        .closed__fenetre--para{
+            color: $colorClosed;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+      }
+      
+      
+    }
+  }
+
+
+

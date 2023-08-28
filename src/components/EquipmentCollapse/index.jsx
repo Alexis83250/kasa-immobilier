@@ -1,7 +1,7 @@
-import appartements from '../datas/appartementList'
+//import appartements from '../datas/appartementList'
 import React, { useState } from 'react';
 //import '../../styles/Card.scss'
-import '../../styles/Propos.scss'
+import '../../styles/FicheLogement.scss'
 import flecheHaute from '../../assets/flecheHaute.png'
 
 
@@ -12,7 +12,7 @@ function EquipmentsCollapse(equipement) {
   //console.log(equipement.data);
   //console.log(equipement.id);
 
-  const toggleCollapse = (itemId) => {
+  const toggleCollapse = () => {
     //setOpenId(prevOpenId => (prevOpenId === itemId ? null : itemId));
     setIsOpen(!isOpen);
   }

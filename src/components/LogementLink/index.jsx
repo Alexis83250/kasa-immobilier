@@ -36,7 +36,7 @@ function AppartementDetailPage() {
     </div>
     <div className='logement__div--3'>
     <div className='logement__description'>
-          <AppartCollapse />
+          <AppartCollapse data={description} id={id} key={id}/>
           </div>
     <div className='logement__equipement'>
         <EquipmentsCollapse data={equipments} id={id} key={id}/>
