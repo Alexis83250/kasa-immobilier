@@ -1,4 +1,4 @@
-import collapseList from '../datas/CollapseList'
+//import collapseList from '../datas/CollapseList'
 import React, { useState } from 'react';
 import '../../styles/Card.scss'
 import '../../styles/Propos.scss'
