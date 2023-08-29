@@ -1,5 +1,5 @@
-import ImageFond2 from '../../assets/ImageFond2.png'
-/*import Fleche from '../../assets/fleche-haute.png'
+/*import ImageFond2 from '../../assets/ImageFond2.png'
+import Fleche from '../../assets/fleche-haute.png'
 import { useState, useEffect } from "react";
 import '../../styles/Banner.scss'
 import '../../styles/Propos.scss'

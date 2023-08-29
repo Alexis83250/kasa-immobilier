@@ -8,8 +8,8 @@ import '../../styles/Header.scss'
 function Header() {
   return (
     <header className='nav'>
-      <Link to="/">
-        <img className='nav__logo' src={LogoHeader} alt='Logo Kasa'/>
+      <Link  className='nav__logo' to="/">
+        <img className='nav__logo--logo' src={LogoHeader} alt='Logo Kasa'/>
       </Link>
       <nav className='nav__div'>
         <Link className='nav__lien' to="/">Accueil</Link>

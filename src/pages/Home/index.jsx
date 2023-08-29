@@ -8,7 +8,7 @@ function Home() {
   const selectedBanner = maBanniere.find(ban => ban.page === "logement");
 
   return (
-    <div>
+    <div className='home' >
       <Banner
         key={selectedBanner.id}
         id={selectedBanner.id}
