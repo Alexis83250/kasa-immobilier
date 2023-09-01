@@ -13,18 +13,18 @@ header {
           width: 211px;
             
             
-        }
+       
         
     }
 
+  }
+  
     .nav__div {
         gap : 20px;
         display: flex;
         justify-content: space-between;
-
-        .nav__lien--actif {
-            border-bottom: 1px solid $color-accueil;
-          }
+        
+       
           .nav__lien{
             text-decoration: none;
             color: $color-accueil ;

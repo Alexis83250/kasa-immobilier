@@ -18,17 +18,17 @@ function EquipmentsCollapse(equipement) {
   }
  //const equipment = appartements.equipements
   return (
-    <div  className='propos  equipCollapse ajustement'>
+    <div  className='col  equipCollapse reglage'>
         <div 
-          className={`propos__fenetre propos`}
+          className={`col__fenetre col`}
           key={equipement.id}
         >
-          <div id='equipCollapse' className=' propos__closed'>
-            <p className='propos__closed--para'>Equipements</p>
+          <div id='equipCollapse' className=' col__ferme'>
+            <p className='col__ferme--para'>Equipements</p>
             <button className={`bouton ${isOpen ? 'open' : ''}`} onClick={toggleCollapse}>
                 
               <img
-                className={`propos__closed--logo cursor ${isOpen ? 'rotate' : ''}`}
+                className={`col__ferme--logo cursor ${isOpen ? 'rotate' : ''}`}
                 src={flecheHaute}
                 alt="Flèche déroulante"
               />
@@ -36,12 +36,12 @@ function EquipmentsCollapse(equipement) {
           </div>
           
           {isOpen && (
-            <div className='closed__fenetre'>
+            <div className='ferme__fenetre'>
                 {equipement.data.map((Monequipements, index ) => (
-              <p className='closed__fenetre--para' key={index}>{Monequipements}</p>))}
+              <p className='ferme__fenetre--para' key={index}>{Monequipements}</p>))}
             </div>
             
-          )}
+          )} 
         </div>
     </div>
   );

@@ -1,6 +1,6 @@
 $colorClosed :#FF6060;
 
-.ajustement{
+.reglage{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@ $colorClosed :#FF6060;
     align-items: center;  
 }
 
-.propos {
+.col {
     display: flex;
     flex-direction: column;  
     align-items: center;
@@ -17,7 +17,7 @@ $colorClosed :#FF6060;
     max-width: 98%;
     margin-bottom: 0px;
     
-    .propos__fenetre {
+    .col__fenetre {
       margin: 10px 0;
       border: none;
       padding: 10px;
@@ -25,7 +25,7 @@ $colorClosed :#FF6060;
       align-items: center;
      
       
-      .propos__closed {
+      .col__ferme {
         flex: 1;
         display: flex;
         width: 100%;
@@ -47,7 +47,7 @@ $colorClosed :#FF6060;
           border: none;
           cursor: pointer;
           outline: none;
-          transition: height 0.3s ease; // Transition de l'animation
+          transition: height 0.3s ease; 
           cursor: pointer;
 
         }
@@ -55,7 +55,7 @@ $colorClosed :#FF6060;
           
 
 
-        .propos__closed--para{
+        .col__ferme--para{
             color: white;
             padding-left: 15px;
             font-family: Montserrat;
@@ -63,20 +63,137 @@ $colorClosed :#FF6060;
             font-size: 24px;
         }
         
-        .propos__closed--logo {
+        .col__ferme--logo {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.4s ease; // Transition de la rotation
+          transition: transform 0.4s ease; 
         
           &.rotate {
-            transform: rotate(-180deg); // Rotation de l'image
+            transform: rotate(-180deg); 
           }
         
         }
       }
       
-      .closed__fenetre { // Caché par défaut
+      .ferme__fenetre { // Caché par défaut
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        background-color: #F6F6F6; 
+        width: 98%;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        animation: move 20s ;
+    -webkit-animation: move 0.7s ;
+    -moz-animation: move 0.7s ;
+    -o-animation: move 0.7s ;
+    z-index: 0;
+    
+
+
+    @keyframes move{
+      from {margin-top:-50px;}
+      to {margin-top:0px;}
+  }
+        
+        .ferme__fenetre--para{
+            color: $colorClosed;
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            margin: 10px;
+            
+            
+        }
+      }
+      
+      
+    }
+  }
+
+   //--------------------------medias queries------------------------------------
+
+
+@media screen and (max-width: 500px) {
+  .reglage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.col {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    max-width: 98%;
+    margin-bottom: 0px;
+    
+    .col__fenetre {
+      margin: 0;
+      border: none;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      
+     
+      
+      .col__ferme {
+        flex: 1;
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        max-height: 30px;
+        align-items: center;  
+        justify-content: space-between;
+        background-color: $colorClosed;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        z-index: 10;
+        font-size: 16px;
+        
+        .bouton  {
+          position: relative;
+          width: 40px;
+          overflow: hidden;
+          background: none;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          transition: height 0.3s ease; 
+          cursor: pointer;
+
+        }
+        
+          
+
+
+        .col__ferme--para{
+            color: white;
+            padding-left: 15px;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-size: 13px;
+        }
+        
+        .col__ferme--logo {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease; 
+        
+        }
+      }
+      
+      .ferme__fenetre { // Caché par défaut
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
@@ -93,24 +210,22 @@ $colorClosed :#FF6060;
     -o-animation: move 0.7s ;
     z-index: 0;
 
-
-    @keyframes move{
-      from {margin-top:-50px;}
-      to {margin-top:0px;}
-  }
         
-        .closed__fenetre--para{
-            color: $colorClosed;
-            display: flex;
-            flex-direction: column;
-            font-size: 20px;
-            
-        }
+       .ferme__fenetre--para{
+        color: $colorClosed;
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        margin: 3px;
+        
+        
+    }
       }
       
-      
-    }
+     
+    } 
   }
+}
 
 
 

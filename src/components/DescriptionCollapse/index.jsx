@@ -17,17 +17,17 @@ function AppartCollapse(descript) {
   }
  //const equipment = appartements.equipements
   return (
-    <div  className='propos  equipCollapse ajustement'>
+    <div  className='col  equipCollapse reglage'>
         <div 
-          className={`propos__fenetre propos`}
+          className={`col__fenetre col`}
           key={descript.id}
         >
-          <div id='equipCollapse' className=' propos__closed'>
-            <p className='propos__closed--para'>Equipements</p>
+          <div id='equipCollapse' className=' col__ferme'>
+            <p className='col__ferme--para'>Description</p>
             <button className={`bouton ${isOpen ? 'open' : ''}`} onClick={toggleCollapse}>
                 
               <img
-                className={`propos__closed--logo cursor ${isOpen ? 'rotate' : ''}`}
+                className={`col__ferme--logo cursor ${isOpen ? 'rotate' : ''}`}
                 src={flecheHaute}
                 alt="Flèche déroulante"
               />
@@ -35,8 +35,8 @@ function AppartCollapse(descript) {
           </div>
           
           {isOpen && (
-            <div className='closed__fenetre'>
-              <p className='closed__fenetre--para'>{descript.data}</p>
+            <div className='ferme__fenetre'>
+              <p className='ferme__fenetre--para'>{descript.data}</p>
             </div>
             
           )}

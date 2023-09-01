@@ -22,7 +22,7 @@ function RatingStar({ data, index }) {
     );
   }
 
-  return <div>{ratingStars}</div>;
+  return <div className='uniqueRating' >{ratingStars}</div>;
 }
 
 export default RatingStar;

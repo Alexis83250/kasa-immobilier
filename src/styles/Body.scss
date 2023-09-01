@@ -1,6 +1,7 @@
 html {
     min-height: 100%;
     position: relative;
+    font-family: Montserrat;
     body {
     width: 100%;
     display: flex;
@@ -14,4 +15,18 @@ html {
 }
 
 }
+
+   //--------------------------medias queries------------------------------------
+
+
+   @media screen and (max-width: 426px) {
+    html {
+       
+        body {
+        
+        margin-bottom: 140px;
+    
+       
+    }
+    }}
 
