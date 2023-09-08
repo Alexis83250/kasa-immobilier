@@ -6,7 +6,7 @@ function Carousel({ data }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const handleNext = () => {
     if (currentImageIndex === data.length - 1) {
-      setCurrentImageIndex(0); // Revenir à la première image lorsque vous atteignez la fin
+      setCurrentImageIndex(0);
     } else {
       setCurrentImageIndex(currentImageIndex + 1);
     }
@@ -14,7 +14,7 @@ function Carousel({ data }) {
 
   const handlePrevious = () => {
     if (currentImageIndex === 0) {
-      setCurrentImageIndex(data.length - 1); // Aller à la dernière image lorsque vous êtes à la première
+      setCurrentImageIndex(data.length - 1); 
     } else {
       setCurrentImageIndex(currentImageIndex - 1);
     }

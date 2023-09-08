@@ -1,39 +1,59 @@
 //import collapseList from '../datas/CollapseList'
 import React, { useState } from 'react';
-import '../../styles/Propos.scss'
+//import '../../styles/Propos.scss'
+import flecheHaute from "../../assets/flecheHaute.png"
+import '../../styles/FicheLogement.scss'
 
 
 
-function Collapse(col) {
-  const [openId, setOpenId] = useState(null);
+function Collapse(descript) {
+  //const [openId, setOpenId] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  //console.log(equipement.data);
+  //console.log(equipement.id);
 
-  const toggleCollapse = (itemId) => {
-    setOpenId(prevOpenId => (prevOpenId === itemId ? null : itemId));
+  const toggleCollapse = () => {
+    //setOpenId(prevOpenId => (prevOpenId === itemId ? null : itemId));
+    setIsOpen(!isOpen);
   }
+/*
+  const titleDetail = descript.number === "1"  & descript.page === "a_propos" ? descript.title : descript.number === "2" & descript.page === "logement" ? `Description` : `Equipements` ;
+  const descriptDetail = descript.number === "1"  & descript.page === "a_propos" ? descript.data : descript.number === "2" & descript.data === "logement" ? descript.data : descript.data.map((Monequipements, index ) => (
+    <p className='ferme__fenetre--para' key={index}>{Monequipements}</p>)) ;*/
+    const titleDetail = (descript.number === "1" && descript.page === "a_propos") ? descript.title : ((descript.number === "2" && descript.page === "logement") ? `Description` : `Equipements`);
+
+    const descriptDetail = (descript.number === "1" && descript.page === "a_propos") ? descript.data : ((descript.number === "2" && descript.page === "logement") ? descript.data : descript.data.map((Monequipements, index ) => (
+      <span className='ferme__fenetre--para' key={index}>{Monequipements}</span>
+    )));
+
+    
+
 
   return (
-    <div className='propos ajustement' key={col.id}>
-        <div
-          className={`propos__fenetre propos`}
-          
+    <div  className='col  equipCollapse reglage'>
+        <div 
+          className={`col__fenetre col`}
+          key={descript.id}
         >
-          <div className=' propos__closed'>
-            <p className='propos__closed--para'>{col.title}</p>
-            <button className={`bouton ${openId ? 'open' : ''}`} onClick={() => toggleCollapse(col.id)}>
+          <div id='equipCollapse' className=' col__ferme'>
+            <p className='col__ferme--para'>{titleDetail}</p>
+            <button className={`bouton ${isOpen ? 'open' : ''}`} onClick={toggleCollapse}>
+                
               <img
-                className={`propos__closed--logo cursor ${openId ? 'rotate' : ''}`}
-                src={col.cover}
+                className={`col__ferme--logo cursor ${isOpen ? 'rotate' : ''}`}
+                src={flecheHaute}
                 alt="Flèche déroulante"
               />
             </button>
           </div>
-          {openId === col.id && (
-            <div className='closed__fenetre'>
-              <p className='closed__fenetre--para'>{col.description}</p>
+          
+          {isOpen && (
+            <div className='ferme__fenetre'>
+              <p className='ferme__fenetre--para'>{descriptDetail}</p>
             </div>
+            
           )}
         </div>
-      
     </div>
   );
 }

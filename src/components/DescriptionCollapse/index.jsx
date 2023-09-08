@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 //import '../../styles/Card.scss'
 import '../../styles/FicheLogement.scss'
 import flecheHaute from '../../assets/flecheHaute.png'

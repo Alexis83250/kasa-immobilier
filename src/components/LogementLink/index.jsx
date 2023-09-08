@@ -1,9 +1,9 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import React from 'react';
 import appartements from '../datas/appartementList';
 import "../../styles/Logement.scss"
-import AppartCollapse from '../DescriptionCollapse'
-import EquipmentsCollapse from '../EquipmentCollapse'
+import Collapse from '../Collapse'
+//import EquipmentsCollapse from '../EquipmentCollapse'
 import Carousel from '../Carousel/index'
 import RatingStar from '../Rating/index'
 import Error from '../Error'
@@ -39,10 +39,10 @@ function AppartementDetailPage() {
     </div>
     <div className='logement__div--3'>
     <div className='logement__description'>
-          <AppartCollapse data={description} id={id} key={id}/>
+          <Collapse data={description} id={id} key={id} number={"2"} page="logement"/>
           </div>
     <div className='logement__equipement'>
-        <EquipmentsCollapse data={equipments} id={id} key={id}/>
+        <Collapse data={equipments} id={id} key={id} number={"3"} page="logement"/>
     </div>
       </div>
       

@@ -1,4 +1,4 @@
-//import appartements from '../datas/appartementList'
+/*//import appartements from '../datas/appartementList'
 import React, { useState } from 'react';
 //import '../../styles/Card.scss'
 import '../../styles/FicheLogement.scss'
